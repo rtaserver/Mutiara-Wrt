@@ -226,7 +226,7 @@ on:
 
 env:
   TZ: Asia/Jakarta
-  IMAGEBUILDER_SH: config/imagebuilder/imagebuilder.sh
+  IMAGEBUILDER_SH: config/imagebuilder/imagebuilder-ophub.sh
 
 jobs:
   build:
