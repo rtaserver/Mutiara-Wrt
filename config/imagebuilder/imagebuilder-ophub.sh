@@ -171,7 +171,7 @@ rebuild_firmware() {
         \
         luci-app-openclash \
         \
-        libc php8 php8-fastcgi php8-fpm coreutils-stat zoneinfo-asia php8-cgi \
+        libc php8 php8-fastcgi php8-fpm coreutils-stat php8-cgi \
         php8-cli php8-mod-bcmath php8-mod-calendar php8-mod-ctype php8-mod-curl php8-mod-dom php8-mod-exif \
         php8-mod-fileinfo php8-mod-filter php8-mod-gd php8-mod-iconv php8-mod-intl php8-mod-mbstring php8-mod-mysqli \
         php8-mod-mysqlnd php8-mod-opcache php8-mod-pdo php8-mod-pdo-mysql php8-mod-phar php8-mod-session \
@@ -186,7 +186,7 @@ rebuild_firmware() {
         freeradius3-mod-expiration freeradius3-mod-expr freeradius3-mod-files freeradius3-mod-logintime \
         freeradius3-mod-mschap freeradius3-mod-pap freeradius3-mod-preprocess freeradius3-mod-radutmp \
         freeradius3-mod-realm freeradius3-mod-sql freeradius3-mod-sql-mysql freeradius3-mod-sqlcounter \
-        freeradius3-mod-unix freeradius3-utils libfreetype wget-ssl curl unzip tar zoneinfo-asia coova-chilli \
+        freeradius3-mod-unix freeradius3-utils libfreetype coova-chilli \
         \
         node node-npm \
         \
