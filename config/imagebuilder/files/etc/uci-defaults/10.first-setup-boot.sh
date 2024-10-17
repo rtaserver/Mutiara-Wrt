@@ -1,5 +1,22 @@
 #!/bin/sh
 
+# Fixed Wifi
+chmod +x /lib/netifd/proto/3g.sh
+chmod +x /lib/netifd/proto/dhcp.sh
+chmod +x /lib/netifd/proto/dhcpv6.sh
+chmod +x /lib/netifd/proto/ppp.sh
+chmod +x /lib/netifd/dhcp-get-server.sh
+chmod +x /lib/netifd/dhcp.script
+chmod +x /lib/netifd/dhcpv6.script
+chmod +x /lib/netifd/hostapd.sh
+chmod +x /lib/netifd/netifd-proto.sh
+chmod +x /lib/netifd/netifd-wireless.sh
+chmod +x /lib/netifd/ppp-down
+chmod +x /lib/netifd/ppp-up
+chmod +x /lib/netifd/ppp6-up
+chmod +x /lib/netifd/utils.sh
+chmod +x /lib/wifi/mac80211.sh
+
 # Set login root password
 # (echo "rtawrt"; sleep 1; echo "rtawrt") | passwd > /dev/null
 
@@ -74,16 +91,16 @@ uci commit dhcp
 /etc/init.d/dnsmasq restart
 
 # configure WLAN
-echo "Setup Wireless if available"
-uci set wireless.@wifi-device[0].disabled='0'
-uci set wireless.@wifi-iface[0].disabled='0'
-uci set wireless.@wifi-iface[0].encryption='none'
-uci set wireless.@wifi-device[0].country='ID'
-uci set wireless.@wifi-iface[0].ssid='OpenWrt'
-uci set wireless.@wifi-device[0].channel='1'
-uci set wireless.@wifi-device[0].band='2g'
-uci commit wireless
-wifi reload && wifi up
+# echo "Setup Wireless if available"
+# uci set wireless.@wifi-device[0].disabled='0'
+# uci set wireless.@wifi-iface[0].disabled='0'
+# uci set wireless.@wifi-iface[0].encryption='none'
+# uci set wireless.@wifi-device[0].country='ID'
+# uci set wireless.@wifi-iface[0].ssid='OpenWrt'
+# uci set wireless.@wifi-device[0].channel='1'
+# uci set wireless.@wifi-device[0].band='2g'
+# uci commit wireless
+# wifi reload && wifi up
 
 # configure Theme
 echo "Setup Default Theme"
