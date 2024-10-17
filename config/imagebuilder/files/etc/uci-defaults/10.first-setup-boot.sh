@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Set login root password
-(echo "rtawrt"; sleep 1; echo "rtawrt") | passwd > /dev/null
+# (echo "rtawrt"; sleep 1; echo "rtawrt") | passwd > /dev/null
 
 # Set hostname and Timezone to Asia/Jakarta
 echo "Setup NTP Server and Time Zone to Asia/Jakarta"
