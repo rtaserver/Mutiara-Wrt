@@ -98,13 +98,23 @@ custom_packages() {
     [[ "${?}" -eq "0" ]] || error_msg "[ ${amlogic_file} ] download failed!"
     echo -e "${INFO} The [ ${amlogic_file} ] is downloaded successfully."
     #
-    # Download luci-app-openclash
+    # Download luci-app-openclash And Core
     openclash_api="https://api.github.com/repos/vernesong/OpenClash/releases"
     openclash_file="luci-app-openclash"
     openclash_file_down="$(curl -s ${openclash_api} | grep "browser_download_url" | grep -oE "https.*${openclash_file}.*.ipk" | head -n 1)"
     curl -fsSOJL ${openclash_file_down}
     [[ "${?}" -eq "0" ]] || error_msg "[ ${openclash_file} ] download failed!"
     echo -e "${INFO} The [ ${openclash_file} ] is downloaded successfully."
+    core_dir="${custom_files_path}/etc/openclash/core"
+    mkdir -p ${core_dir}
+    clash_meta="$(meta_api="https://api.github.com/repos/MetaCubeX/mihomo/releases/latest" && meta_file="mihomo-linux-$ARCH_1" && curl -s ${meta_api} | grep "browser_download_url" | grep -oE "https.*${meta_file}-v[0-9]+\.[0-9]+\.[0-9]+\.gz" | head -n 1)"
+    echo -e "${INFO} Downloading clash_meta.gz..."
+    if wget --no-check-certificate -nv -O $core_dir/clash_meta.gz $clash_meta; then
+    gzip -d $core_dir/clash_meta.gz
+    echo -e "${INFO} clash_meta.gz downloaded successfully."
+    else
+    echo -e "${ERROR} Failed to download clash_meta.gz."
+    fi
     #
 
     sync && sleep 3
