@@ -50,5 +50,3 @@ uci commit dhcp
 
 echo "Network setup complete!"
 rm -- "$0"
-reboot
-exit 0

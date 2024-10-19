@@ -93,4 +93,5 @@ fi
 
 echo "Hotspot setup complete!"
 rm -- "$0"
-exit 0
+
+reboot

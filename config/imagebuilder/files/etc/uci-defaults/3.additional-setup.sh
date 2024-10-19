@@ -98,5 +98,3 @@ echo "done."
 
 echo "Additional setup complete!"
 rm -- "$0"
-reboot
-exit 0

@@ -38,5 +38,3 @@ echo "src/gz mutiara_wrt https://raw.githubusercontent.com/maizil41/mutiara-wrt-
 
 echo "First setup complete!"
 rm -- "$0"
-reboot
-exit 0
